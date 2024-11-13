@@ -1,0 +1,224 @@
+/* Variables de colores */
+:root {
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --background-dark: #0f172a;
+  --background-light: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #38bdf8;
+  --danger-color: #ef4444;
+  --success-color: #22c55e;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos básicos */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  background-color: var(--background-light);
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  color: var(--accent-color);
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+/* Barra de navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2c2c34;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--accent-color);
+  color: #2c2c34;
+  border-radius: 5px;
+}
+
+/* Botón de cerrar sesión */
+.logout-button {
+  background-color: #ff4b4b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #e04040;
+}
+
+/* Pestañas de navegación */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #007BFF;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #007BFF;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-button.active {
+  border-bottom: 2px solid #007BFF;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.tab-button:hover {
+  background-color: #e9f5ff;
+}
+
+/* Contenido de las pestañas */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Títulos en las pestañas */
+h2 {
+  margin-top: 0;
+  color: var(--accent-color);
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="email"], input[type="text"], input[type="password"], input[type="submit"], button {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #7a7e8a;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+}
+
+input[type="submit"], button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Mensajes */
+.message, .notification {
+  color: var(--danger-color);
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Botón de registro */
+.register-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Etiquetas de los campos */
+label {
+  font-weight: bold;
+  color: #9fa6b2;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 640px) {
+  .container {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .tab-button {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="password"],
+  input[type="submit"],
+  button {
+    font-size: 1rem;
+  }
+
+  .register-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}

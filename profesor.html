@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestión de Profesor</title>
+    <script type="text/javascript" src="./frontend/scriptProfesor.js"></script>
+    <script
+      type="text/javascript"
+      src="/backend/permisos/permissionsP.js"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="static/stylesa.css" />
+    <script>
+      // Verifica si el usuario ha iniciado sesión
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+        // Si no ha iniciado sesión, redirige a index.html
+        window.location.href = "/index.html";
+      }
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-links">
+        <a href="estudiantes.html">Estudiantes</a>
+        <a href="cursos.html">Cursos</a>
+      </div>
+      <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
+    </nav>
+
+    <div class="container">
+      <!-- Adicionar Profesores -->
+      <div id="adicionarProfesores" class="tab-content">
+        <form>
+          <h1>Adicionar Profesor</h1>
+          <label for="dni">Documento de identidad:</label>
+          <input type="text" id="dni" placeholder="" />
+          <label for="nombre">Nombres:</label>
+          <input type="text" id="nombre" placeholder="" />
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" placeholder="" />
+          <label for="email">Email:</label>
+          <input type="text" id="email" placeholder="" />
+          <label for="profesor">Profesor:</label>
+          <input type="text" id="profesor" placeholder="" />
+          <label for="telefono">Teléfono:</label>
+          <input type="text" id="telefono" placeholder="" />
+          <input type="submit" onclick="guardar()" value="Aceptar" />
+        </form>
+      </div>
+
+      <!-- Listar Profesores -->
+      <div id="listarProfesores" class="tab-content">
+        <form>
+          <h1>Listar Profesores</h1>
+          <p id="rta">Resultado:</p>
+          <input type="submit" onclick="listar()" value="Aceptar" />
+        </form>
+      </div>
+
+      <!-- Modificar Profesor -->
+      <div id="actualizarProfesor" class="tab-content">
+        <form>
+          <h1>Modificar Profesor</h1>
+          <label for="idA">Identificador:</label>
+          <input type="text" id="idA" placeholder="" />
+          <label for="dniA">Documento de identidad:</label>
+          <input type="text" id="dniA" placeholder="" />
+          <label for="nombreA">Nombres:</label>
+          <input type="text" id="nombreA" placeholder="" />
+          <label for="apellidosA">Apellidos:</label>
+          <input type="text" id="apellidosA" placeholder="" />
+          <label for="correoA">Email:</label>
+          <input type="text" id="correoA" placeholder="" />
+          <label for="profesorA">Profesor:</label>
+          <input type="text" id="profesorA" placeholder="" />
+          <label for="telefonoA">Teléfono:</label>
+          <input type="text" id="telefonoA" placeholder="" />
+          <p id="rtaA">Resultado:</p>
+          <input type="submit" onclick="actualizar()" value="Aceptar" />
+        </form>
+      </div>
+
+      <!-- Listar un Profesor -->
+      <div id="listarunProfesores" class="tab-content">
+        <form>
+          <h1>Listar Profesor</h1>
+          <label for="idLE">Identificador del profesor a buscar:</label>
+          <input type="text" id="idLE" placeholder="" />
+          <p id="rtaLE">Resultado:</p>
+          <input type="submit" onclick="listar_profesores()" value="Aceptar" />
+        </form>
+      </div>
+
+      <!-- Eliminar Profesor -->
+      <div id="eliminarProfesor" class="tab-content">
+        <form>
+          <h1>Eliminar Profesor</h1>
+          <label for="idEE">Identificador del profesor a borrar:</label>
+          <input type="text" id="idEE" placeholder="" />
+          <p id="rtaEE">Resultado:</p>
+          <input
+            type="submit"
+            onclick="eliminar_profesores()"
+            value="Aceptar"
+          />
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function logout() {
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>

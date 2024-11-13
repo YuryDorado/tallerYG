@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login y Registro</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="static/script.js" defer></script>
+    <script src="static/authentication.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bienvenido a la Aplicación</h1>
+      <div class="tabs">
+        <button class="tab-button active" data-tab="register">
+          Registrarse
+        </button>
+        <button class="tab-button" data-tab="login">Iniciar Sesión</button>
+      </div>
+
+      <!-- Formulario de registro -->
+      <div class="tab-content active" id="register">
+        <h2>Registro</h2>
+        <form id="registerForm">
+          <input
+            type="text"
+            id="username"
+            placeholder="Nombre de usuario"
+            required
+          />
+          <input type="text" id="numero" placeholder="Número" required />
+          <select id="tipoUsuario" required>
+            <option value="" disabled selected>
+              Selecciona el tipo de usuario
+            </option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="ESTUDIANTE">ESTUDIANTE</option>
+            <option value="PROFESOR">PROFESOR</option>
+          </select>
+          <input
+            type="password"
+            id="passwordAdmin"
+            placeholder="Contraseña de Admin"
+            class="admin-password"
+          />
+          <input
+            type="password"
+            id="passwordProfesor"
+            placeholder="Contraseña de Profesor"
+            class="profesor-password"
+          />
+          <button type="submit">Registrar</button>
+        </form>
+        <p id="registerMessage" class="message"></p>
+      </div>
+
+      <!-- Formulario de inicio de sesión -->
+      <div class="tab-content" id="login">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+          <input type="file" id="tokenFile" accept=".json" required />
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p id="loginMessage" class="message"></p>
+      </div>
+    </div>
+  </body>
+</html>

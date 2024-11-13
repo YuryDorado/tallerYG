@@ -1,0 +1,21 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Bogotá",
+			"country": {
+				"code": "CO",
+				"name": "Colombia"
+			},
+			"subdivision": {
+				"code": "DC",
+				"name": "Bogota D.C."
+			},
+			"timezone": "America/Bogota",
+			"latitude": 4.6633,
+			"longitude": -74.0413,
+			"postalCode": "110221"
+		},
+		"timestamp": 1731464193772
+	},
+	"siteId": "fcf85055-2b0c-49ab-8b41-8f188c053f87"
+}
